@@ -1,0 +1,9 @@
+{{ define "tags" }}
+<!-- Tags -->
+{{- range $i := .Tags -}}
+    <a href="#">{{ $i }}</a>
+{{ else }}
+    No fukkin' tagz!
+{{- end -}}
+
+{{ end }}

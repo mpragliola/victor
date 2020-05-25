@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>{{ .Title }}</title>
+    </head>
+    <body>
+        {{ .Body }}
+        {{ template "tags" . }}
+        {{ template "footer" . }}
+    </body>
+</html>
