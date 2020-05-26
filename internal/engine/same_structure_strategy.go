@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"regexp"
 
-	"github.com/mpragliola/sangennaro/internal/content"
-	"github.com/mpragliola/sangennaro/internal/filesystem"
+	"github.com/mpragliola/victor/internal/content"
+	"github.com/mpragliola/victor/internal/filesystem"
 )
 
 // SameStructureStrategy ...

@@ -1,6 +1,6 @@
 package engine
 
-import "github.com/mpragliola/sangennaro/internal/content"
+import "github.com/mpragliola/victor/internal/content"
 
 // NamingStrategy ...
 type NamingStrategy interface {

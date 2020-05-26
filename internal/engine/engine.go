@@ -8,13 +8,10 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/mpragliola/sangennaro/internal/content"
-	"github.com/mpragliola/sangennaro/internal/filesystem"
-	"github.com/mpragliola/sangennaro/internal/frontmatter"
-	"github.com/mpragliola/sangennaro/internal/parser"
+	"github.com/mpragliola/victor/internal/content"
+	"github.com/mpragliola/victor/internal/filesystem"
+	"github.com/mpragliola/victor/internal/parser/parsers"
 )
-
-var fm = frontmatter.NewFrontmatter()
 
 // Engine ...
 type Engine struct {
@@ -114,7 +111,7 @@ func (e *Engine) parseFile(layout *template.Template, sourceFileName string) str
 		log.Fatal(err)
 	}
 
-	p := parser.NewParser()
+	p := parsers.NewDefault()
 	page := p.Parse(content, sourceFileName)
 
 	return e.writeDestFile(layout, page)

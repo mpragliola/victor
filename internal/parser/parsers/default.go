@@ -5,8 +5,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/mpragliola/sangennaro/internal/content"
-	"github.com/mpragliola/sangennaro/internal/frontmatter"
+	"github.com/mpragliola/victor/internal/content"
+	"github.com/mpragliola/victor/internal/frontmatter"
 	"github.com/russross/blackfriday/v2"
 )
 
@@ -20,13 +20,12 @@ func NewDefault() *Default {
 }
 
 // Parse ...
-func (p *Parser) Parse(source []byte, sourceFilename string) content.Page {
+func (p *Default) Parse(source []byte, sourceFilename string) content.Page {
 	page := content.Page{
 		SourceFilename: sourceFilename,
 	}
 
-	fm := frontmatter.NewFrontmatter()
-	body, err := fm.Unmarshal(source, &page)
+	body, err := frontmatter.Unmarshal(source, &page)
 
 	if err != nil {
 		log.Fatal(err)
@@ -43,7 +42,7 @@ func (p *Parser) Parse(source []byte, sourceFilename string) content.Page {
 	return page
 }
 
-func (p *Parser) parseTags(page *content.Page) *content.Page {
+func (p *Default) parseTags(page *content.Page) *content.Page {
 	if len(page.RawTags) == 0 {
 		return page
 	}

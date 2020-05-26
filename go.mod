@@ -1,4 +1,4 @@
-module github.com/mpragliola/sangennaro
+module github.com/mpragliola/victor
 
 go 1.14
 

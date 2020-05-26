@@ -3,7 +3,7 @@ package engine
 import (
 	"testing"
 
-	"github.com/mpragliola/sangennaro/internal/content"
+	"github.com/mpragliola/victor/internal/content"
 )
 
 func TestSum(t *testing.T) {
